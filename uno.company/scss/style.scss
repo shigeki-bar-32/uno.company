@@ -1,0 +1,395 @@
+/*Font Awesomeの読み込み
+---------------------------------------------------------------------------*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+/*テンプレート専用cssファイルの読み込み
+---------------------------------------------------------------------------*/
+@import url("animation.css");
+@import url("inview.css");
+
+/*テーマカラーの定義（CSS変数）
+ここのカラーコードを変更するだけで、テンプレートのテーマカラーが変わります。
+---------------------------------------------------------------------------*/
+:root {
+  --primary-color: #404e5a; /*ヘッダーの背景色など*/
+  --secondary-color: #626f78; /*bg1などで使っているサブ的な色*/
+  --primary-text-color: #e6e7e8; /*主に、上の２つのカラーを背景色に使った際の文字色*/
+}
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+html,
+body {
+  font-size: 13px; /*基準となるフォントサイズ。*/
+}
+
+/*画面幅900px以上の追加指定*/
+@media screen and (min-width: 900px) {
+  html,
+  body {
+    font-size: 16px; /*基準となるフォントサイズ。*/
+  }
+} /*追加指定ここまで*/
+body {
+  font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "メイリオ",
+    Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; /*フォント種類*/
+  -webkit-text-size-adjust: none;
+  background: #fefefe; /*背景色*/
+  color: #696a6a; /*文字色*/
+  line-height: 2; /*行間*/
+}
+
+/*リセット*/
+figure {
+  margin: 0;
+}
+dd {
+  margin: 0;
+}
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+/*table全般の設定*/
+table {
+  border-collapse: collapse;
+}
+
+/*画像全般の設定*/
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/*videoタグ*/
+video {
+  max-width: 100%;
+}
+
+/*iframeタグ*/
+iframe {
+  width: 100%;
+}
+
+/*他*/
+input {
+  font-size: 1rem;
+}
+
+/*リンクテキスト全般の設定
+---------------------------------------------------------------------------*/
+a {
+  color: #696a6a; /*文字色*/
+  transition: 0.3s; /*hoverまでにかける時間。0.3秒。*/
+}
+
+/*マウスオン時*/
+a:hover {
+  opacity: 0.8; /*色を80%だけ出す*/
+}
+
+/*sectionとarticleの余白
+---------------------------------------------------------------------------*/
+main > section,
+main > article {
+  padding: 2% 5%; /*上下、左右への余白*/
+}
+
+/*コンテナー（サイト全体を囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+  max-width: 1800px; /*サイトの最大幅。これ以上広がらない。*/
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/*header（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック*/
+header a {
+  color: inherit;
+}
+header {
+  display: flex;
+  justify-content: flex-start; /* 左寄せ */
+  align-items: flex-start;
+  padding: 20px 40px;
+  position: relative;
+  gap: 3rem; /* ロゴとキャッチフレーズ間の余白 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column; /* 常に縦並び */
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 700px;
+}
+
+/* ロゴと会社名は横並び */
+#logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#logo img {
+  width: 100%;
+  max-width: 250px; /* 最大幅を指定 */
+  height: auto;
+  display: block;
+}
+
+.catchphrase-wrapper {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
+/* キャッチフレーズ 縦書き*/
+.catchphrase {
+  margin-left: 110px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  vertical-align: top;
+  font-size: 3.3rem; /* かなり大きめ */
+  line-height: 1.4;
+  color: #333; /* 色はお好みで */
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 800px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .catchphrase-wrapper {
+    writing-mode: horizontal-tb;
+    white-space: normal;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .catchphrase {
+    font-size: 1.2rem;
+  }
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/*画面幅400px以上の追加指定*/
+@media screen and (min-width: 400px) {
+  /*ロゴ*/
+  #logo {
+    margin-bottom: 0; /*下に空けるスペースをなくす*/
+  }
+} /*追加指定ここまで*/
+
+/* 右側のお問い合わせボタン */
+.btn {
+  position: fixed;
+  top: 100px;
+  right: 10px; 
+  list-style: none;
+  z-index: 1001; 
+
+  
+}
+
+.btn li a {
+  display: block;
+  writing-mode: vertical-lr;
+  text-decoration: none;
+  background: linear-gradient(#ffc000, #ffa800);
+  color: #333;
+  border-radius: 3px;
+  padding: 0.3rem 0.2rem;
+
+  
+}
+
+/* スマホで非表示にする */
+@media screen and (max-width: 768px) {
+  header .btn li a {
+    display: none;
+  }
+}
+// スマホ用ハンバーガーメニュートリガー
+.menu-trigger {
+  display: none; /* ハンバーガーはスマホで表示 */
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100;
+
+  span {
+    display: block;
+    height: 3px;
+    background-color: #2a2a2a;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+}
+
+.header-right {
+  right: 10px; 
+  position:  absolute;
+  top: 100px; 
+  display: flex; 
+  gap: 40px; 
+  z-index: 1000; 
+
+  
+}
+
+/* display系クラス追加 */
+.display-block {
+  display: block !important;
+}
+.display-none {
+  display: none !important;
+}
+
+#menubar {
+  position: relative;
+  top: 100px;      /* 必要に応じて調整 */
+  right: 10px;     /* 画面右端からの距離 */
+  z-index: 1000;
+
+
+  ul {
+    // display: flex; 
+    // flex-direction: column; 
+    // gap: 2rem; 
+    // list-style: none;
+    // padding: 0;
+    // margin: 0;
+    // writing-mode: vertical-lr; 
+    // text-orientation: upright;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+
+  }
+
+  li a {
+    // padding-top: 0.8em; 
+    // position: relative; 
+    // writing-mode: vertical-lr; 
+    // text-orientation: upright;
+    // display: block;
+    // color: #2a2a2a;
+    // font-size: 1.6rem;
+    // line-height: 1;
+    // text-decoration: none;
+    // transition: color 0.3s ease;
+
+    display: block;
+  padding-top: 0.8em;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: #2a2a2a;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3.5rem;           /* バーの位置（上） */
+      left: 50%;
+      transform: translateX(-50%);  /* 中央寄せ */
+      width: 2px;
+      height: 3.5rem;      /* バーの太さ */
+      background-color: #00a99d; /* バーの色 */
+      opacity: 0;       /* 初期は透明 */
+      transition: opacity 0.3s;
+      pointer-events: none; /* ホバー判定に影響しない */
+      z-index: 10;  /* 追加：疑似要素を前面に表示 */
+    }
+
+    &:hover::before,
+    &.active::before{
+      opacity: 1;       /* ホバー・アクティブ時に表示 */
+      color: #00a99d;
+    }
+
+    &:hover {
+      color: #00a99d; /* 文字色変更も既にあり */
+    }
+  }
+}
+
+// レスポンシブ
+@media screen and (max-width: 768px) {
+  #menubar {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    writing-mode: vertical-lr; /* 縦書き左から右 */
+    padding: 60px 20px 20px;
+    overflow-y: auto;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    ul {
+      display: flex; // 追加
+      flex-direction: column; // 追加
+      gap: 1.5rem; // ここにもgapを指定
+      writing-mode: vertical-lr;
+      list-style: none;
+      text-orientation: upright;
+    }
+
+    li a {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      display: block;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .menu-trigger {
+    display: block;
+    
+  }
+
+}
+
+#menubar,
+.btn {
+  position: static; /* 親に合わせて自然な位置に */
+}

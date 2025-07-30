@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="茨城町にある建設会社、宇野建設工業株式会社のホームページです">
+  <title>対応工事一覧 - 宇野建設工業株式会社</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="logo">
+      <a href="index.html"><img src="image/uno-logo.png" alt="宇野建設ロゴ" /></a>
+    </h1>
+
+    <div id="menubar_hdr" class="display-block">
+      <button class="menu-trigger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="header-right">
+      <nav id="menubar">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="works.html">対応工事一覧</a></li>
+          <li><a href="sekou.html">施工事例</a></li>
+          <li><a href="company.html">会社情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="construction-list">
+      <h2>対応工事一覧<span>Works</span></h2>
+
+      <!-- 検索ボックス -->
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="工事名を検索" />
+      </div>
+
+      <!-- 絞り込みボタン -->
+      <div class="filter-buttons">
+        <button class="active" data-filter="all">すべて</button>
+        <button data-filter="土木">土木</button>
+        <button data-filter="舗装">舗装</button>
+        <button data-filter="建築">建築</button>
+        <button data-filter="水道">水道</button>
+      </div>
+
+      <!-- 対応工事リスト -->
+      <ul class="list" id="worksList">
+        <li data-category="土木">
+          <div class="title">土木工事一式</div>
+          <div class="category">土木</div>
+          <p>河川工事、道路工事など幅広く対応。</p>
+        </li>
+        <li data-category="舗装">
+          <div class="title">舗装工事一式</div>
+          <div class="category">舗装</div>
+          <p>道路や駐車場の舗装工事を専門に行います。</p>
+        </li>
+        <li data-category="建築">
+          <div class="title">建築工事一式</div>
+          <div class="category">建築</div>
+          <p>住宅から商業施設まで幅広く対応。</p>
+        </li>
+        <li data-category="水道">
+          <div class="title">水道施設工事一式</div>
+          <div class="category">水道</div>
+          <p>上下水道の整備や修繕を行います。</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>Copyright&copy; <a href="index.html">uno company</a> All Rights Reserved.</small>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
