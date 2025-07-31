@@ -274,14 +274,6 @@ header {
 
 
   ul {
-    // display: flex; 
-    // flex-direction: column; 
-    // gap: 2rem; 
-    // list-style: none;
-    // padding: 0;
-    // margin: 0;
-    // writing-mode: vertical-lr; 
-    // text-orientation: upright;
 
     list-style: none;
     margin: 0;
@@ -295,18 +287,8 @@ header {
   }
 
   li a {
-    // padding-top: 0.8em; 
-    // position: relative; 
-    // writing-mode: vertical-lr; 
-    // text-orientation: upright;
-    // display: block;
-    // color: #2a2a2a;
-    // font-size: 1.6rem;
-    // line-height: 1;
-    // text-decoration: none;
-    // transition: color 0.3s ease;
 
-    display: block;
+  display: block;
   padding-top: 0.8em;
   writing-mode: vertical-lr;
   text-orientation: upright;
@@ -393,3 +375,4 @@ header {
 .btn {
   position: static; /* 親に合わせて自然な位置に */
 }
+
